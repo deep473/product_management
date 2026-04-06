@@ -2,42 +2,43 @@ package project.product.mamagement.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import project.product.mamagement.entity.Product;
+import project.product.mamagement.repository.ProductRepository;
 
 @Service
 public class ProductServiceImplementation 
 implements ProductService{
-
+	
+	ProductRepository repo;
+	public ProductServiceImplementation(ProductRepository repo) {
+		super();
+		this.repo = repo;
+	}
 	@Override
 	public String addProduct(Product prod) {
-		// TODO Auto-generated method stub
-		return null;
+		repo.save(prod);
+		return "Product added successfully!";
 	}
-
 	@Override
 	public String updateProduct(Product prod) {
-		// TODO Auto-generated method stub
-		return null;
+		repo.save(prod);
+		return "Product updated successfully!";
 	}
-
 	@Override
-	public String deleteroduct(Long prodId) {
-		// TODO Auto-generated method stub
-		return null;
+	public String deleteProduct(Long prodId) {
+		repo.deleteById(prodId);
+		return "Product deleted successfully!";
 	}
-
 	@Override
 	public Product viewProduct(Long prodId) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.findById(prodId).get();
 	}
-
 	@Override
 	public List<Product> viewAllProducts() {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.findAll();
 	}
 
 }

@@ -7,7 +7,7 @@ import project.product.mamagement.entity.Product;
 public interface ProductService {
 	String addProduct(Product prod);
 	String updateProduct(Product prod);
-	String deleteroduct(Long prodId);
+	String deleteProduct(Long prodId);
 	Product viewProduct(Long prodId);
 	List<Product> viewAllProducts();
 }

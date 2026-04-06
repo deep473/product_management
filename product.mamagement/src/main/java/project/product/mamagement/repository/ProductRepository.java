@@ -8,4 +8,4 @@ public interface ProductRepository
 
 			extends JpaRepository<Product, Long>{
 
-}
+} //https://github.com/deep473/product_management.git
