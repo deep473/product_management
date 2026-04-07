@@ -2,7 +2,6 @@ package project.product.mamagement.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import project.product.mamagement.entity.Product;
@@ -10,7 +9,7 @@ import project.product.mamagement.repository.ProductRepository;
 
 @Service
 public class ProductServiceImplementation 
-implements ProductService{
+					implements ProductService{
 	
 	ProductRepository repo;
 	public ProductServiceImplementation(ProductRepository repo) {

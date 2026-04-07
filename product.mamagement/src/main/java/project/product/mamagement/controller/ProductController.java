@@ -10,20 +10,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.persistence.GeneratedValue;
 import project.product.mamagement.entity.Product;
 import project.product.mamagement.service.ProductService;
 
 @RestController
 public class ProductController {
-
 	ProductService service;
-
 	public ProductController(ProductService service) {
 		super();
 		this.service = service;
 	}
-	
 	@PostMapping("/addProduct")
 	public String addProduct(@RequestBody Product prod) {
 		return service.addProduct(prod);
@@ -36,7 +32,7 @@ public class ProductController {
 	public String deleteProduct(@PathVariable Long prodId) {
 		return service.deleteProduct(prodId);
 	}
-	@GetMapping("viewProduct/{prodId}")
+	@GetMapping("/viewProduct/{prodId}")
 	public Product viewProduct(@PathVariable Long prodId) {
 		return service.viewProduct(prodId);
 	}
@@ -45,3 +41,4 @@ public class ProductController {
 		return service.viewAllProducts();
 	}
 }
+//https://github.com/deep473/product_management
